@@ -18,7 +18,6 @@ CIRC_WIDTH = 12
 CROSS_WIDTH = 15
 
 RADIUS = 40
-
 OFFSET = 50
 
 BG_COLOR = (10, 37, 61)
@@ -82,7 +81,6 @@ class Board:
                 pygame.draw.line(screen, color, iPos, fPos, CROSS_WIDTH)
             return self.squares[1][1]
 
-        # no win
         return 0
 
     def mark_sqr(self, row, col, player):
@@ -193,7 +191,7 @@ class Game:
         self.running = True
         self.show_lines()
 
-    # --- DRAW METHODS ---
+    # methods for draw
 
     def show_lines(self):
 
@@ -318,7 +316,7 @@ def main():
                         else:
                             game.display_message("It's a Draw!")
         
-        # AI initial call
+        # AI call
         if game.gamemode == 'ai' and game.player == ai.player and game.running:
 
             # update the screen
